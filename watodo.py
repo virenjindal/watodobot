@@ -20,7 +20,7 @@ PHONE_NUMBER_ID = os.environ["PHONE_NUMBER_ID"]
 DEFAULT_TODOS = ["Drink water", "Check email", "Plan the day"]
 
 def send_message(phone, text):
-    print("Sending to:", phone, "->", text)  # <- Add this line
+    print("Sending to:", phone, "->", text, flush=True)  # <- Add this line
     url = f"https://graph.facebook.com/v19.0/{PHONE_NUMBER_ID}/messages"
     headers = {
         "Authorization": f"Bearer {WHATSAPP_TOKEN}",
@@ -46,7 +46,7 @@ def webhook():
 
     if request.method == "POST":
         data = request.get_json()
-        print("Incoming webhook data:", data)
+        print("Incoming webhook data:", data, flush=True)
         try:
             phone = data["entry"][0]["changes"][0]["value"]["messages"][0]["from"]
             msg = data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"].strip().lower()
