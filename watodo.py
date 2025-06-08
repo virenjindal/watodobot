@@ -81,6 +81,10 @@ def webhook():
             print("Error:", e)
         return "OK", 200
 
+@app.route("/", methods=["GET"])
+def index():
+    return "WhatsApp To-Do Bot is running!", 200
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
