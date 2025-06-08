@@ -17,7 +17,7 @@ db = firestore.client()
 WHATSAPP_TOKEN = os.environ["WHATSAPP_TOKEN"]
 PHONE_NUMBER_ID = os.environ["PHONE_NUMBER_ID"]
 
-DEFAULT_TODOS = ["Focus & Hardwork","Drink 1L water","LinkedIn Posts","Meditate", "9pm Walk","Call Home"]
+DEFAULT_TODOS = ["Drink 2L water","Meditate 30m","Call Home", "9pm Walk","Wash/Dry/Iron Clothes","Oats Prep"]
 
 def send_message(phone, text):
     print("Sending to:", phone, "->", text, flush=True)  # <- Add this line
