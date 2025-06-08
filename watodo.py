@@ -4,6 +4,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore
 import datetime
 import os
+import sys
 
 app = Flask(__name__)
 
@@ -35,6 +36,8 @@ def send_message(phone, text):
 
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
+    print("Webhook POST received")
+    sys.stdout.flush()
     if request.method == "GET":
         # Webhook verification
         if request.args.get("hub.verify_token") == "testtoken":
