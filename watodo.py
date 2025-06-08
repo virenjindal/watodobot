@@ -31,6 +31,7 @@ def send_message(phone, text):
         "text": {"body": text}
     }
     requests.post(url, headers=headers, json=payload)
+    print(f"Sent message to {phone}, status: {response.status_code}, response: {response.text}")
 
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
@@ -42,6 +43,7 @@ def webhook():
 
     if request.method == "POST":
         data = request.get_json()
+        print("Incoming webhook data:", data)
         try:
             phone = data["entry"][0]["changes"][0]["value"]["messages"][0]["from"]
             msg = data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"].strip().lower()
