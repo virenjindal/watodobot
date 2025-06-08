@@ -5,6 +5,10 @@ from firebase_admin import credentials, firestore
 import datetime
 import os
 import sys
+import pytz
+
+india_tz = pytz.timezone("Asia/Kolkata")
+today = datetime.datetime.now(india_tz).date().isoformat()
 
 app = Flask(__name__)
 
