@@ -7,9 +7,6 @@ import os
 import sys
 import pytz
 
-india_tz = pytz.timezone("Asia/Kolkata")
-today = datetime.datetime.now(india_tz).date().isoformat()
-
 app = Flask(__name__)
 
 # Firebase setup
@@ -55,7 +52,8 @@ def webhook():
             phone = data["entry"][0]["changes"][0]["value"]["messages"][0]["from"]
             msg = data["entry"][0]["changes"][0]["value"]["messages"][0]["text"]["body"].strip().lower()
 
-            today = datetime.date.today().isoformat()
+            india_tz = pytz.timezone("Asia/Kolkata")
+            today = datetime.datetime.now(india_tz).date().isoformat()
             todos_ref = db.collection("users").document(phone).collection("todos").document(today)
 
             doc = todos_ref.get()
