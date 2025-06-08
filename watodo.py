@@ -19,6 +19,7 @@ PHONE_NUMBER_ID = os.environ["PHONE_NUMBER_ID"]
 DEFAULT_TODOS = ["Drink water", "Check email", "Plan the day"]
 
 def send_message(phone, text):
+    print("Sending to:", phone, "->", text)  # <- Add this line
     url = f"https://graph.facebook.com/v19.0/{PHONE_NUMBER_ID}/messages"
     headers = {
         "Authorization": f"Bearer {WHATSAPP_TOKEN}",
