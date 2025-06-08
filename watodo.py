@@ -13,8 +13,8 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 
 # WhatsApp credentials from environment
-WHATSAPP_TOKEN = os.environ["WHATSAPP_TOKEN"]
-PHONE_NUMBER_ID = os.environ["PHONE_NUMBER_ID"]
+WHATSAPP_TOKEN = os.environ["EAAULkrwdruYBO5GmuDEpPwLnFKh96SGde0p5G8ZBv5yoSfd4aSOaEiq7FIsVO08fqkHcPWDrOlhfB0hkRhQYJ19LIlm9uTw98QVRzLMyviZC54QiLqaZBERX2nmYBl7RQjrpwOOaBleDRX0ag2i6aIu2eWW8TZBAECLZAZAls2FPwR6x1GBYKNMwfwtU2AuLwpoNZAfhLZCaMv0eTqFZAbvO7BbWNrPUnL0Fqa358"]
+PHONE_NUMBER_ID = os.environ["596427313564915"]
 
 DEFAULT_TODOS = ["Drink water", "Check email", "Plan the day"]
 
